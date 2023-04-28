@@ -1,3 +1,6 @@
+html {
+    font-size: 62.5%;
+}
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
@@ -31,15 +34,26 @@
     height: 100vh;
     display: flex;
     flex-flow: column;
-    padding: 46px 150px;
-    padding-bottom: 0;
+    padding: 5.7em 15em 2em 14.7em;
 
     color: var(--text-color);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 32rem) {
+    body,
+    html {
+        overflow-x: hidden;
+        position: relative;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
     #root {
-        height:auto;
+        height: auto;
         padding: 0;
     }
 }

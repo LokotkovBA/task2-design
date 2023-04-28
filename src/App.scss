@@ -1,47 +1,64 @@
 .header {
     display: flex;
+    font-size: 1.6rem;
+    padding-left: 0.3rem;
 
     font-weight: 500;
-    line-height: 19px;
+    line-height: 1.9rem;
 
     &__main-logo {
-        font-family: Montserrat;
-        font-weight: 300;
-        font-size: 12px;
-        line-height: 14px;
-        margin-right: 52px;
+        max-width: 22ch;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin-right: 5rem;
     }
 
     &__list {
-        padding-top: 4px;
-        gap: 30px;
+        padding-top: 0.4rem;
+        gap: 3.06rem;
         display: flex;
     }
 
     &__phone {
-        margin-left: auto;
+        margin-left: 13.9rem;
+        padding-top: 0.4rem;
     }
 
     &__logos {
-        margin-left: 49px;
+        margin-left: auto;
+        padding-top: 0.3rem;
         display: flex;
-        gap: 32px;
+        gap: 3.4rem;
     }
 }
 
+.main-logo {
+    &__p {
+        font-weight: 300;
+        margin-top: 1rem;
+        max-width: 23ch;
+    }
+}
+
+@mixin defaultFont() {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
 .content {
-    height: 100%;
-    margin-top: 90px;
+    margin-top: 9rem;
     display: flex;
     justify-content: space-between;
 
     &__main {
-        max-width: 38ch;
+        padding: 0.2rem;
+        max-width: 43ch;
     }
 
     &__side {
+        padding-top: 1.7rem;
         display: flex;
-        gap: 40px;
+        gap: 4rem;
         flex-direction: column;
         align-items: flex-end;
         text-align: right;
@@ -50,68 +67,74 @@
 
 .main {
     &__heading {
-        font-size: 48px;
-        line-height: 58px;
+        font-size: 4.8rem;
+        line-height: 5.8rem;
         font-weight: 400;
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
     }
     &__p {
-        max-width: 23ch;
-        font-family: "Montserrat";
         font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
+        @include defaultFont();
     }
 }
 
 .side {
     &__heading {
-        max-width: 23ch;
+        max-width: 24ch;
         font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
+        @include defaultFont();
     }
 
     &__list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        column-gap: 2.5rem;
+        row-gap: 3rem;
     }
 
     &__button {
-        margin-top: 20px;
+        font-family: Inter;
+        margin-top: 2rem;
         background-color: var(--button-color);
         border: none;
-        padding: 21px 35px;
+        padding: 2.1rem 3.5rem;
 
         font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
     }
 }
 
 .item {
-    max-width: 13ch;
+    max-width: 14ch;
+    font-size: 1.6rem;
+    line-height: 1.25em;
     &__heading {
+        margin-bottom: 0.6rem;
         font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
+        @include defaultFont();
+        letter-spacing: 0.05em;
     }
 }
 
+.p {
+    font-family: "Montserrat";
+}
+
 @mixin footer-menu {
-    margin-top: 20px;
-    gap: 10px;
+    margin-top: 2rem;
+    gap: 1rem;
 }
 
 .footer {
-    margin-top: 124px;
+    margin-top: 6.9rem;
+    padding-top: 5.5rem;
+    padding-left: 0.2rem;
     display: flex;
-    gap: 98px;
-    font-style: normal;
+    gap: 9.3rem;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
 
     &__about {
         min-width: 20ch;
@@ -120,7 +143,8 @@
     &__list {
         @include footer-menu();
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        column-gap: 3.1rem;
+        grid-template-columns: 144fr 212fr;
         min-width: 44ch;
     }
     &__contacts {
@@ -128,12 +152,12 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 20px;
+        gap: 2.1rem;
     }
 }
 .logos {
     display: flex;
-    gap: 10px;
+    gap: 1.5rem;
 }
 
 .about {
@@ -147,8 +171,9 @@
 .heading {
     color: var(--heading-color);
     font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.05em;
 }
 
 .list {
@@ -160,7 +185,10 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
+
 .bold-gradient {
     @include text-gradient(--bold-gradient);
 }
@@ -168,21 +196,21 @@
     @include text-gradient(--bold-gradient2);
 }
 
-.main-logo {
-    &__p {
-        margin-top: 10px;
-        max-width: 23ch;
-    }
+.bold {
+    font-weight: 900;
+    letter-spacing: 0;
 }
 
 .trademark {
-    margin-top: 33px;
-    margin-bottom: 20px;
+    margin-top: 3.3rem;
     text-align: right;
-    font-family: "Montserrat";
     font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
     &__a {
         text-decoration: underline;
@@ -219,7 +247,7 @@
     height: 83px;
     left: 519px;
     top: 83px;
-    border-radius: 3em;
+    border-radius: 100%;
 
     background: radial-gradient(
         64% 64% at 27.25% 26.5%,
@@ -238,7 +266,7 @@
     height: 28px;
     left: 851px;
     top: 547px;
-    border-radius: 3em;
+    border-radius: 100%;
 
     background: radial-gradient(
         64% 64% at 27.25% 26.5%,
@@ -258,7 +286,7 @@
     height: 60px;
     left: 868px;
     top: -2px;
-    border-radius: 3em;
+    border-radius: 100%;
 
     background: radial-gradient(
         64% 64% at 27.25% 26.5%,
@@ -272,43 +300,73 @@
     backdrop-filter: blur(2px);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 90rem) {
+    .desktop-hide {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 30rem) {
     .header {
         z-index: 1;
         background-color: var(--bg-color);
         display: block;
-        padding: 16px;
+        padding: 2rem 1.6rem;
 
         &__main-logo {
             display: none;
         }
 
         &__list {
-            gap: 0;
-            justify-content: space-around;
+            padding: 0;
+            gap: 1.7rem;
             font-weight: 500;
-            font-size: 12px;
-            line-height: 15px;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
             text-transform: uppercase;
         }
     }
 
     .content {
+        background-image: url("/noise.png");
+        background-image: url("/noise.png"),
+            radial-gradient(
+                238.53% 189.02% at 3.2% 3.49%,
+                rgba(255, 246, 233, 0.1) 0%,
+                rgba(26, 29, 35, 0.1) 26.62%,
+                rgba(26, 29, 35, 0.1) 52.1%,
+                rgba(26, 29, 35, 0.01) 70.17%,
+                rgba(26, 29, 35, 0) 100%
+            );
+
+        backdrop-filter: blur(7.5px);
         margin-top: 0;
-        padding: 40px 14px 55px;
+        padding: 4rem 3.3rem 5.5rem 1.5rem;
         flex-wrap: wrap;
-        gap: 45px;
-        &__side{
+        gap: 4.5rem;
+
+        &__main {
+            z-index: 1;
+            padding: 0;
+        }
+
+        &__side {
+            padding-top: 0;
+            z-index: 1;
             align-items: flex-start;
-            gap: 20px;
+            gap: 2.1rem;
         }
     }
 
     .main {
         &__heading {
             font-weight: 400;
-            font-size: 36px;
-            line-height: 44px;
+            font-size: 3.6rem;
+            line-height: 4.4rem;
+            margin-bottom: 1.5rem;
+        }
+        &__p {
+            min-width: 22ch;
         }
     }
 
@@ -318,30 +376,45 @@
         }
 
         &__list {
+            grid-template-columns: 114fr 141fr;
             justify-items: left;
+            gap: 0.82rem;
         }
     }
 
     .item {
-        max-width: unset;
         font-family: "Montserrat";
         font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 16px;
-        letter-spacing: 0.05em;
+        justify-items: start;
+
+        &__heading {
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+            text-align: left;
+        }
+
+        &--skype {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        &--dashboard {
+            grid-row: 2;
+            grid-column: 1;
+        }
 
         &--mobile-line {
             position: relative;
-            margin-left: 15px;
+            margin-left: 1.5rem;
 
             &::before {
                 position: absolute;
-                top: 50%;
-                left: -15px;
+                top: 30%;
+                left: -1.5rem;
                 content: "";
-                width: 10px;
-                height: 2px;
+                width: 1rem;
+                height: 0.2rem;
                 background-image: var(--bold-gradient2);
             }
         }
@@ -357,13 +430,21 @@
 
     .footer {
         margin-top: 0;
+        position: relative;
         z-index: 1;
         background-color: var(--bg-color);
-        padding: 45px 16px;
+        padding: 3.8rem 1.6rem;
         flex-wrap: wrap;
+        gap: 3rem;
+
+        font-size: 1.4rem;
+        line-height: 1.7rem;
 
         &__list {
+            grid-template-columns: 8fr 10fr;
             min-width: 0;
+            row-gap: 1rem;
+            column-gap: 3.3rem;
         }
 
         &__item {
@@ -373,8 +454,19 @@
         &__contacts {
             align-items: flex-start;
             margin-left: 0;
-            gap: 10px;
+            gap: 1.1rem;
         }
+    }
+
+    .logo {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .heading {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.05em;
     }
 
     .contacts {
@@ -384,13 +476,24 @@
             margin-bottom: 10px;
         }
     }
+    .phone {
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        font-weight: 500;
+    }
 
     .trademark {
-        padding: 0 16px;
+        margin-top: 1.2rem;
+        padding: 0 1.6rem 6rem;
         text-align: left;
         display: flex;
         flex-direction: column;
         gap: 5px;
+    }
+
+    .bold-gradient,
+    .bold-gradient2 {
+        letter-spacing: 0;
     }
 
     .purple-blob {
@@ -407,20 +510,29 @@
     }
 
     .small-red-ball {
+        z-index: -1;
         width: 43px;
         height: 43px;
         left: 29px;
         top: 402px;
+        background: radial-gradient(
+            64% 64% at 27.25% 26.5%,
+            rgba(255, 208, 208, 0.536) 0%,
+            rgba(212, 93, 93, 0.264) 59.67%,
+            rgba(167, 49, 49, 0.248) 78.59%,
+            rgba(130, 25, 25, 0.248) 100%
+        );
     }
 
     .purple-ball {
+        z-index: -1;
         width: 40px;
         height: 40px;
         left: 296px;
         top: 236px;
     }
 
-    .big-red-ball{
+    .big-red-ball {
         display: none;
     }
 }
